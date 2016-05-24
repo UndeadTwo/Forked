@@ -22,5 +22,5 @@ if(process.env.NODE !== 'test') {
 	app.listen(port);
 	console.log("Listening on port", port);
 } else {
-	exports = app;
+	module.exports = app;
 }

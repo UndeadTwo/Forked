@@ -9,6 +9,7 @@
 
 #./node_modules/.bin/mocha --recursive -r test/test-helper.js "$@"
 
+export NODE=test
 istanbul cover ./node_modules/mocha/bin/_mocha --recursive -r test/test-helper.js test/**/*.js --report lcovonly -- -R spec
 cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 

@@ -19,6 +19,8 @@ var client = yelp.createClient({
 route.get('/', function(req, res) {
   var queryData = url.parse(req.url, true).query;
 
+  console.log('Blah1')
+
   client.search({
     term: queryData.term,
     category_filter: 'restaurants',
@@ -26,6 +28,7 @@ route.get('/', function(req, res) {
     location: queryData.location,
     sort: 0
   }).then(function(data) {
+    console.log('Blah2')
     var modifiedData = data.businesses.map( (dat) => { return {
       name: dat.name,
       rating: dat.rating,
